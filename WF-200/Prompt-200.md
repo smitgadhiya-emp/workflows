@@ -30,3 +30,16 @@ One thing I will stress. The value here is catching the actions nobody knows are
 
 Note: the invocation traffic and caller exposure data is in the "Action Traffic Data" Google Sheet in the Drive folder Engineering / Server Action Audit. Read that instead of live Vercel logs or APM. The Next.js source comes from the GitHub repo itself.
 
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Engineering 
+2. Occupation + workplace (one line, this is the persona voice):
+-> software product company, responsible for application-security audits and authorization-coverage reviews across a Next.js web application codebase.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 480 minutes
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 1
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 7

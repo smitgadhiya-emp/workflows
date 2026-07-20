@@ -10,7 +10,8 @@ Prompt 2: For Prompt update acc. to comments
 
 Prompt 3: for HTH evalution 
 
-@Prompt Book/ Use this as COntex but generate @Prompt Book/head-to-head  for what i need as prompt. From @zarna/Multi-entity June close.md having details,
+@Prompt Book/ Use this as COntex but generate 
+@Prompt Book/head-to-head  for what i need as prompt.
 
 From "  "   having details,
 

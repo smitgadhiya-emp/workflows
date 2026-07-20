@@ -37,3 +37,17 @@ Ground rules, in case any of the above gets ambiguous
 Don't invent anything: not an author, not a date, not a domain, not what a document says, and above all not a gap. Keep what you actually retrieved separate from anything you're inferring. When you're missing something, name the exact file or field that's missing rather than smoothing over it. Any time confidence is Low, say why it's low in that row. No file contents, no personal data, and no credentials in the Teams post.
 
 It's done when every file in the folder is cataloged with a parse status, every indexed chunk carries its full metadata, the collection has no duplicates on a second run, every question on the "questions" tab has an answer with a routed domain and a confidence score, every gap is either confirmed or parked as unknown coverage with the blocker named, the ledger reconciles, the tracker is updated in place, and the summary is up in the channel with the blind spots called out.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer 
+2. Occupation + workplace (one line, this is the persona voice):
+-> Data/knowledge engineer at a software or knowledge-driven company, responsible for building internal search/indexing pipelines and documentation-coverage reporting over the company's Google Drive corpus.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 600 minutes
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 2
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 7
