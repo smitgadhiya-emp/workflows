@@ -27,3 +27,17 @@ Before you call it done, run a self-audit and show it. Every input you found has
 One thing I will stress. The value here is the per-field coverage comparison against a fully resolved middleware chain, not a route inventory. Anyone can list routes. If you tell me which specific fields on a route that looks validated are actually naked, and back it with the file, the line and the chain you resolved, that is the win. If you genuinely cannot resolve a chain or a field list, say so with your confidence and your candidates, do not invent coverage to look complete. Stop and tell me if the repo, the sheets, Jira or Teams is not reachable, and name which one, rather than skipping it quietly. Done when every user-reachable input in those five folders is in the coverage map with a verdict and a score, every route scoring 40 or more has a linked ticket, and the Teams summary is posted once with numbers that match the sheet.
 
 Note: the route traffic, exposure and auth data is in the "Route Traffic Data" Google Sheet in the Drive folder Engineering / Input Validation. Read that instead of the live gateway logs or APM. The Express source comes from the GitHub repo itself.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer
+2. Occupation + workplace (one line, this is the persona voice):
+-> Software/security engineer at a software product company, responsible for application-security audits and input-validation coverage reviews across a multi-service Express (Node.js) API codebase.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 540 minutes  
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 1
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 6

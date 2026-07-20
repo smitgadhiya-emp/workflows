@@ -17,3 +17,17 @@ If the sheet already has answers or gap rows from an earlier run, update them ra
 Before you post it, audit your own run and show the audit. Every question in the window ends in exactly one state: answered with sources and a confidence call, consolidated into another row, or sitting in the gaps tab with a reason. Every version tag in the corpus either has evidence behind it or says version-unverified. The counts in the Teams message match the sheet, and every corpus entry an answer cites actually exists in the PR. If any of that fails, fix it before posting, and if you cannot, say exactly what is off.
 
 If you cannot reach the repo, the sheet, Teams, or any of the doc sites, stop and tell me which one instead of working around it quietly. Done when the corpus PR is open, every question in that window has either a version-accurate answer, a pointer to its duplicate, or a gap row, the places our code contradicts the docs are called out, and the Teams summary is posted once with numbers that match the sheet.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer
+2. Occupation + workplace (one line, this is the persona voice):
+-> Software engineer at a software product company running a MERN stack, responsible for internal developer tooling, documentation quality, and reducing repeated support questions across engineering teams.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 720 minutes  
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 2
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 6
