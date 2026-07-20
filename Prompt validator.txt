@@ -1,0 +1,76 @@
+You are reviewing a workflow prompt I wrote for an AI workflow-evaluation project. The
+prompt only ever runs on my own workspace, so it may reference my real files and apps by
+name. Check it against the 9 rules below and return the result in the exact format shown.
+Keep everything short, plain, and easy to read.
+
+Most important for this review: if my prompt creates a new system (a sheet, ticket, board,
+or project) and says what each item must AT LEAST contain, that is a stated minimum and
+rules 4 and 9 PASS. Do not fail those rules for an open structure, do not ask for a fuller
+field list, and do not prescribe one in the fix. Leaving structure open to test the model's
+judgment is a valid, authentic choice. The only structure details you may still require are
+ones that change scoring (decision rules, research scope, batch limits, completion criteria,
+draft or live).
+While reviewing:
+- Whenever my prompt uses a relative time range like "last 30 days" or "this quarter",
+ convert it to exact calendar dates based on today's date, and use those dates in the fix.
+- For each broken rule, write the fix line out in full, using square brackets [like this]
+ only for the specific values I must fill in (property names, folders, people).
+- Flag any sentence that reads as AI-written, overly polished, or too formal. Rewrite each
+ of those to sound like a person wrote it casually, and apply that rewrite in the final
+ prompt.
+- Balance test, apply this before failing rule 4 or rule 9 for any missing detail. Ask
+ whether different reasonable interpretations of the detail would materially change the
+ output or make scoring subjective. If yes, it should be defined (for example: the rule
+ separating two statuses, research scope, batch limits, completion criteria, whether code
+ may be changed). If a capable junior employee would normally decide it on their own (for
+ example: the structure or extra fields of a sheet, ticket, or board the model creates, or
+ how it organizes the work), it is fine to leave it open. Do NOT fail a prompt for an
+ intentionally open structure when the minimum required information is stated.
+The 9 rules:
+1. Written as instructions to another person, no first-person "I" statements.
+2. Uses at least two apps: reads from one app and takes a real action in a different app.
+ A document or summary alone does not count.
+3. Ends in a real change (an updated record, a sent message), not just a file.
+4. Names the exact resources: the specific list, sheet, repo, doc, folder, channel,
+ account, or property when more than one could exist. For an existing system, names the
+ fields changed. For a new system, states the minimum information each item must contain;
+ leaving the rest of the structure open to test the model's judgment is fine and PASSES.
+ For example, "configure the Jira project, each ticket must at least contain the Task ID
+ and related task details" passes, even without a full field list.
+5. Says what to produce, not the step-by-step method.
+6. Hard enough that a top model would not do it perfectly.
+7. A real, recurring task, not experimental.
+8. No confidential client data or credentials in the text.
+9. Specific enough to avoid a revision, applying the balance test above. Require a detail
+ only where a different reasonable interpretation would change the output or scoring:
+ bounds any "review/search" step (folder, labels, channels, date range, records, keywords);
+ names the exact account or property; gives reference sources; says what to extract from
+ inputs; defines relative dates with exact dates; says update-in-place or create-new; gives
+ the output's destination (location, naming, sharing, filters); defines the judgment
+ criteria when the model must filter or rank, the decision rules, the completion criteria,
+ and any batch limits; and for messages or invites says draft or live, recipients or
+ attendees, subject, and a link to any created file. The structure and extra fields of
+ something the model creates may be left open if the minimum information is stated.
+Return exactly this, in plain language:
+VERDICT: READY TO SUBMIT or NOT READY. If not ready, the single biggest reason in one line.
+CRITERIA CHECK: List each rule 1 to 9 with PASS or FAIL and a few words why.
+FIXES: For every FAIL, write two lines:
+- Wrong: quote the exact line from my prompt, or "missing" if nothing is there.
+- Fix: the line written out, with [brackets] for the values I fill in. Convert any relative
+ dates to exact dates based on today.
+AI-WRITTEN CHECK: Quote any sentences that read as AI-written, overly polished, or too
+formal. If there are none, write "reads human". Whatever you quote here, rewrite to sound
+casual and human in the final prompt.
+WORKFLOW DIFFICULTY: A number 1 to 7 for how hard the workflow is for a person (1 extremely
+easy, 7 extremely difficult), with one line of why. This is the Feather "Workflow
+difficulty" field. Tell me to set my own honest figure.
+EXPECTED OUTCOME SCORE: A number 1 to 7 for how well a top model would do (1 it fails, 7
+perfect). This is the Feather "Rate the experience and outcome" field. We want a low score,
+1 to 3. If you expect 5 to 7, say it is too easy and name one thing to make it harder.
+FULL FIXED PROMPT: My original prompt with every fix applied. Mark removed text with
+~~double tildes~~ and added or rewritten text with {{ double curly braces }}. Do not use
+bold. Keep my original wording wherever it already sounds human. Use [brackets] for the
+values I fill in. Rewrite any AI-sounding sentence to sound casual and human, shown as
+~~old text~~ {{ new text }}.
+Here is my workflow prompt :
+
