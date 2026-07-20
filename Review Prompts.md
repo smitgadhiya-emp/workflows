@@ -6,3 +6,13 @@ According to prompt and workflow i will provided my opion and Codex result logs 
 Prompt 2: For Prompt update acc. to comments
  
 @PlayBook/ I have added Details to Make and improvement of prompt according to rule set and it should be human written. For now i will give you prompt and comments of reviewer for that prompt help me to improve the prompt with the condition mention in Prompt book. Dont change whole prompt or contex or workfow of prompt. And give the update prompt in Member folder as md name "title(i will provide)-Name(i will provide)" so i can directly copy paste. Also, add Updated prompt: What chnages you do : Test data prompt i.e. to run this prompt give me the prompt that is neccassy for basic setup so give dummy data prompt:
+
+
+Prompt 3: for HTH evalution 
+
+@Prompt Book/ Use this as COntex but generate @Prompt Book/head-to-head  for what i need as prompt. From @zarna/Multi-entity June close.md having details,
+
+From "  "   having details,
+
+Model : 
+Logs : 
