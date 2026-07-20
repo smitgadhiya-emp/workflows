@@ -1,0 +1,8 @@
+Prompt 1 : codex performance : 
+ 
+According to prompt and workflow i will provided my opion and Codex result logs help me write its performace and rating "Please test this workflow in Codex, using 5.5 (any color) with Extra High Intelligence. Rate the experience and outcome on a scale from 1 (horrible / completely unsuccessful) to 7 (perfect execution and experience). Add any notes on Codex's performance." So i need like that in para formate, human written, no em dashaes, and justify properly. its good and bad points both and if rating is low justify why low andd high like that eg: if rating is 3 justfy 3 postive point and 4 negative. like that. but in paragh and and sumary type it should not too long or to short. givei n format: Execution time : "" Summary:""  
+ 
+ 
+Prompt 2: For Prompt update acc. to comments
+ 
+@PlayBook/ I have added Details to Make and improvement of prompt according to rule set and it should be human written. For now i will give you prompt and comments of reviewer for that prompt help me to improve the prompt with the condition mention in Prompt book. Dont change whole prompt or contex or workfow of prompt. And give the update prompt in Member folder as md name "title(i will provide)-Name(i will provide)" so i can directly copy paste. Also, add Updated prompt: What chnages you do : Test data prompt i.e. to run this prompt give me the prompt that is neccassy for basic setup so give dummy data prompt:

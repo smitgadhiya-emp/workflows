@@ -1,0 +1,387 @@
+"Business Problem
+
+Before implementing a new backend feature, developers spend significant time understanding the existing system.
+
+Typical questions include:
+
+Which APIs need to be added or modified?
+Which database tables are affected?
+Do existing migrations conflict?
+Which services and repositories need updates?
+Will this change break existing APIs?
+Which modules depend on these models?
+Which validations and permissions are required?
+What tests need updating?
+
+This investigation is repeated by every developer, leading to duplicated effort and missed impacts.
+
+This workflow automatically analyzes the codebase and produces a complete implementation blueprint before any code is written.
+
+Step 1: Select Development Task
+
+Review the Jira project.
+
+Select the highest-priority backend ticket with status:
+
+Ready for Development
+Selected for Development
+Backend
+API Feature
+
+Retrieve:
+
+Title
+Description
+Acceptance Criteria
+Comments
+Attachments
+Design Links
+API Contracts
+Client Requirements
+Linked Frontend Tasks
+
+Update the Jira ticket status to Analysis In Progress.
+
+Step 2: Analyze Existing Architecture
+
+Clone or review the latest GitHub backend repository.
+
+Identify:
+
+Framework (Laravel, FastAPI, NestJS, Spring Boot, Django, ASP.NET, etc.)
+Architecture Pattern (MVC, Clean Architecture, Hexagonal, DDD, etc.)
+Folder Structure
+Module Organization
+Dependency Injection Pattern
+Validation Strategy
+Authentication Mechanism
+Authorization System
+Exception Handling
+Logging
+Event System
+Queue Processing
+Background Jobs
+Caching
+API Versioning
+
+Generate an architecture summary.
+
+Step 3: Understand the Existing Domain
+
+Analyze:
+
+Database Models
+Relationships
+Existing Business Logic
+Services
+Repositories
+Controllers
+Middleware
+Policies
+DTOs
+Validators
+Existing APIs
+Existing Background Jobs
+
+Determine how the requested feature fits into the current architecture.
+
+Step 4: Impact Analysis
+
+Identify all files that will likely be affected.
+
+Categorize them as:
+
+Directly Modified Files
+Controllers
+Services
+Models
+Repositories
+Routes
+Validators
+DTOs
+Migrations
+Indirectly Affected Files
+Policies
+Events
+Listeners
+Notifications
+Background Jobs
+Cron Jobs
+API Documentation
+Seeders
+Factories
+Configuration Files
+
+Step 5: Database Analysis
+
+Review:
+
+Existing Tables
+Foreign Keys
+Indexes
+Constraints
+Relationships
+Soft Deletes
+Triggers (if any)
+
+Determine:
+
+New Tables Required
+
+New Columns
+
+Modified Columns
+
+Indexes Needed
+
+Foreign Keys
+
+Unique Constraints
+
+Nullable Changes
+
+Cascade Rules
+
+Migration Risks
+
+Rollback Considerations
+
+Potential Data Migration Requirements
+
+Generate migration recommendations.
+
+
+Step 6: API Planning
+
+Identify:
+
+New APIs
+
+Modified APIs
+
+Deprecated APIs
+
+For every endpoint define:
+
+Method
+URL
+Authentication
+Authorization
+Request Schema
+Response Schema
+Validation Rules
+Error Responses
+Pagination
+Filtering
+Sorting
+Rate Limits
+
+
+Step 7: Business Logic Planning
+
+Break the implementation into logical layers.
+
+Example:
+
+Controller
+
+↓
+
+Validation
+
+↓
+
+Service
+
+↓
+
+Repository
+
+↓
+
+Database
+
+↓
+
+Events
+
+↓
+
+Notification
+
+↓
+
+Response
+
+Explain responsibilities for each layer.
+
+Step 8: Dependency & Risk Analysis
+
+Detect:
+
+Breaking API changes
+Database migration risks
+Circular dependencies
+Performance impact
+N+1 query risks
+Missing indexes
+Concurrency issues
+Transaction requirements
+Cache invalidation needs
+Event sequencing issues
+
+Assign:
+
+Low
+
+Medium
+
+High
+
+Risk levels.
+
+Step 9: Testing Strategy
+
+Generate a checklist covering:
+
+Unit Tests
+Integration Tests
+API Tests
+Authorization Tests
+Validation Tests
+Edge Cases
+Database Migration Tests
+Performance Tests
+Rollback Verification
+
+Highlight existing tests that require updates.
+
+Step 10: Implementation Checklist
+
+Generate a developer-friendly execution plan.
+
+Example:
+
+Create migration
+Update model
+Add relationships
+Create DTO
+Add validation
+Create repository methods
+Implement service logic
+Add controller
+Register routes
+Update Swagger
+Write tests
+Verify rollback
+Update documentation
+
+
+Step 11: Architecture Recommendation (Large Features Only)
+
+If the feature is classified as Large or Epic, generate additional guidance:
+
+Module decomposition
+Suggested package/folder structure
+New service boundaries
+Domain separation
+Event-driven opportunities
+Reusable components
+Future scalability considerations
+Refactoring opportunities
+
+Recommend changes only if they align with the existing architecture.
+
+Step 12: Generate Documentation
+
+Create a Google Document or Markdown file:
+
+{Feature Name} – Backend Implementation Blueprint
+
+Recommended structure:
+
+Feature Overview
+Current Architecture Summary
+Feature Scope
+Existing Components
+Files to Modify
+New Files to Create
+Database Changes
+Migration Plan
+API Design
+Business Logic Flow
+Sequence Diagram (optional)
+Risk Assessment
+Testing Checklist
+Implementation Checklist
+Architecture Recommendations
+Rollback Strategy
+
+Store it in the project's Google Drive folder or repository documentation.
+
+Step 13: Update Jira
+
+Post a structured comment containing:
+
+Architecture Summary
+Estimated Files Impacted
+Database Changes
+APIs to Create
+Risk Level
+Implementation Complexity
+Blueprint Document Link
+
+Move the ticket to Ready for Development or Analysis Complete.
+
+Step 14: Notify Engineering Team
+
+Send a Microsoft Teams message:
+
+Backend Implementation Blueprint Ready
+
+Feature: Multi-Tenant User Management
+
+Summary
+
+12 files to modify
+4 new files to create
+2 database migrations
+3 new APIs
+1 existing API update
+Risk Level: Medium
+
+Key Concerns
+
+Foreign key migration order
+Cache invalidation after tenant updates
+Backward compatibility for existing APIs
+
+Deliverables
+
+Implementation Blueprint
+Database Plan
+API Specification
+Testing Checklist
+
+Google Document: <link>
+
+Deliverables
+Backend implementation blueprint
+File impact analysis
+Database migration plan
+API design document
+Risk assessment
+Testing strategy
+Step-by-step implementation checklist
+Jira update
+Teams notification
+Advanced AI Reasoning (What makes this workflow challenging)
+
+To evaluate true senior backend engineering skills, add these capabilities:
+
+Dependency Graph Analysis: Trace all downstream services, jobs, events, repositories, and APIs affected by the proposed changes to identify hidden impact areas.
+Backward Compatibility Check: Detect whether database or API changes could break existing clients, integrations, or mobile app versions, and recommend versioning or migration strategies.
+Performance Impact Prediction: Analyze query patterns and relationships to predict N+1 issues, missing indexes, expensive joins, cache invalidation needs, and transaction bottlenecks before implementation.
+Security Review: Identify new authorization rules, permission updates, sensitive data exposure risks, audit logging requirements, and input validation gaps introduced by the feature.
+Effort Breakdown: Produce a development plan with estimated effort for schema changes, business logic, API implementation, testing, documentation, and deployment, helping the tech lead plan the sprint.
+Release & Rollback Strategy: Recommend deployment order (migrations, backend rollout, feature flags, frontend dependency), rollback steps, and data migration precautions to minimize production risk."

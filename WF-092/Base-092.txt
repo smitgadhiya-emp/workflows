@@ -1,0 +1,288 @@
+Intelligent Cross-Browser & Device Test Prioritization
+
+"Reads analytics tool for actual browser/device breakdown of real users, reads open bug list, generates prioritized cross-browser test matrix - test Chrome first because 70% of users are on it, not because it's default. Posts priority test matrix to QA team before each release.
+
+Business Problem
+
+QA teams often execute the same regression suite across all supported browsers and devices, regardless of where actual users are. This results in unnecessary testing effort while critical browser combinations used by most customers may not receive adequate attention.
+
+This workflow prioritizes browser and device testing based on real user analytics, current code changes, historical defects, and business impact to ensure testing effort is focused where it matters most.
+
+Step 1: Read Release Scope
+
+Review the upcoming release from Jira and GitHub.
+
+Collect:
+
+Release Version
+Features Included
+Bug Fixes
+Modified Modules
+Frontend Components
+CSS Changes
+JavaScript Changes
+Responsive Layout Changes
+
+Determine which application areas require browser compatibility validation.
+
+Step 2: Analyze Real User Traffic
+
+Using Google Analytics 4 and Microsoft Clarity, collect data for the last 90 days:
+
+Browsers
+Chrome
+Safari
+Edge
+Firefox
+Samsung Internet
+Opera
+Devices
+Desktop
+Mobile
+Tablet
+Operating Systems
+Windows
+macOS
+Android
+iOS
+Screen Resolutions
+Countries
+Traffic Percentage
+Revenue Contribution
+Conversion Rate
+Bounce Rate
+
+Step 3: Build Browser Usage Matrix
+
+Create a weighted matrix using:
+
+Browser Share
+Device Share
+Operating System
+Screen Resolution
+Revenue Impact
+User Count
+Session Count
+
+Example:
+
+Browser	Device	Users	Revenue	Priority
+Chrome	Windows Desktop	42%	High	Critical
+Safari	iPhone	28%	High	Critical
+Edge	Windows	10%	Medium	High
+Firefox	Linux	3%	Low	Medium
+
+
+Step 4: Review Existing Bugs
+
+Read Jira.
+
+Analyze:
+
+Open browser-specific bugs
+Recently fixed browser bugs
+Reopened defects
+Regression bugs
+Browser compatibility issues
+
+Identify browsers requiring additional validation.
+
+Step 5: Analyze Code Changes
+
+Review GitHub.
+
+Detect:
+
+CSS changes
+Layout modifications
+Responsive components
+JavaScript framework upgrades
+Polyfill changes
+Browser API usage
+Third-party library updates
+Media queries
+Animation changes
+
+Estimate browser compatibility risk.
+
+Step 6: Generate Risk Score
+
+Calculate a weighted score using:
+
+User Traffic
+Revenue Impact
+Number of Code Changes
+Historical Defects
+Device Popularity
+Browser-specific Bugs
+Mobile Usage
+Checkout Impact
+
+Example:
+
+Chrome Desktop
+
+Traffic: High
+
+Revenue: High
+
+Checkout Modified
+
+Historical Bugs: Medium
+
+Risk Score: 95
+
+Step 7: Build Intelligent Test Matrix
+
+Instead of testing every browser equally, generate an execution order.
+
+Example
+
+Priority 1
+
+Chrome Windows
+Chrome Android
+Safari iPhone
+
+Priority 2
+
+Edge Windows
+Safari Mac
+
+Priority 3
+
+Firefox Windows
+Samsung Internet
+
+Priority 4
+
+Opera
+Legacy Browsers
+Step 8: Recommend Test Coverage
+
+For each browser combination determine required testing.
+
+Examples
+
+Chrome Desktop
+
+Login
+Checkout
+Dashboard
+Search
+Payment
+File Upload
+
+Safari iPhone
+
+Responsive Layout
+Payment
+Apple Pay
+Forms
+Navigation
+
+Firefox
+
+Authentication
+Printing
+Downloads
+
+
+Step 9: Generate Test Assignment Sheet
+
+Create a Google Sheet:
+
+Release Browser Test Matrix – {Release Version}
+
+Columns:
+
+Browser
+Version
+Device
+OS
+Screen Resolution
+User %
+Revenue %
+Risk Score
+Priority
+Features to Test
+Assigned Tester
+Status
+Notes
+Step 10: Create Jira Tasks
+
+Automatically create browser-specific testing tasks.
+
+Example:
+
+Chrome Desktop Regression
+
+Label:
+
+browser-testing
+release-testing
+high-priority
+
+Include:
+
+Browser
+Device
+Test Scope
+Risk Score
+Related Features
+Linked Release
+
+Do not assign to any user.
+
+Step 11: Generate QA Report
+
+Create a Google Document.
+
+Include:
+
+Browser Usage Summary
+Device Distribution
+High-Risk Browsers
+Browser Bug Trends
+Code Change Impact
+Recommended Testing Order
+Untested Risk Areas
+Overall Release Compatibility Risk
+
+
+
+Step 12: Notify QA Team
+
+Post in Microsoft Teams.
+
+Example:
+
+Release 3.8 Browser Testing Summary
+
+Critical Testing Order
+
+Chrome Windows Desktop
+Safari iPhone
+Chrome Android
+Edge Windows
+
+High-Risk Areas
+
+Checkout
+Payment Flow
+Responsive Dashboard
+
+Browser-specific Jira Tasks Created: 14
+
+Google Sheet: <link>
+
+QA Report: <link>
+
+Expected Deliverables
+Browser & device usage analysis
+Risk-based browser priority matrix
+Google Sheet with test assignments
+Google Docs compatibility report
+Browser-specific Jira tasks
+QA Teams notification
+"

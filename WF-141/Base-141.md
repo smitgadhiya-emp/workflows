@@ -1,0 +1,1 @@
+reads ML training dataset from cloud storage, calculates class distribution per label, identifies severely underrepresented classes (less than 5% of dataset), generates data collection priority list showing which classes need more samples before next training run. Posts imbalance report to ML team - prevents model that works on majority class and fails on minority.

@@ -1,0 +1,129 @@
+Reusable Context Prompt for Evaluation
+# REUSABLE CONTEXT — Codex Agentic Workflow Eval (OpenAI feedback form)
+## FIRST RESPONSE — do this immediately when I paste this prompt
+Your very first reply must be ONLY the blank METADATA questionnaire below, for me to fill in.
+Do not produce any form answers yet. After the questionnaire, add one line:
+"Paste the filled METADATA + PROMPT + LOGS and I'll generate all 7 form boxes."
+Then wait. Do not say anything else.
+Blank questionnaire to send me (reproduce these 7 lines exactly):
+    1. Occupation / career (dropdown choice):
+    2. Occupation + workplace (one line, this is the persona voice):
+    3. Time to complete this workflow WITHOUT a model (minutes):
+    4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+    5. Workflow difficulty 1-7 (1 easy, 7 hard):
+    6. My initial Codex test rating 1-7 (1 horrible, 7 perfect):
+    7. Notes on Codex's performance (optional):
+## What this is
+I'm rating Codex (GPT-5.5, Extra High Intelligence) on agentic, multi-app workflows
+(e.g. Google Sheets/Drive, GSC, GA4, Microsoft Clarity, Jira, Teams, GitHub, Chrome
+automation). After the questionnaire I will paste, in this order:
+  1. METADATA — my filled answers to the 7 fields above
+  2. PROMPT — the task I gave Codex
+  3. LOGS — Codex's run narration / tool calls / final message
+Your job: produce answers for the feedback form below, ready to paste into the boxes.
+## Metadata handling notes
+- Fields 5 and 6 are button widgets on the real form, so I type them as a single number.
+- If I leave field 5 (difficulty) or field 6 (my test rating) blank, suggest a value from the
+  LOGS with a one-line reason.
+- Field 3 (time) feeds the "End-to-end time" box.
+- Field 7 (notes): align your commentary with it unless the LOGS clearly contradict, and say so if they do.
+- Field 2 is the PERSONA voice you write every box in.
+## The form — produce ALL of these, in this order
+1. Overall task success — rating 1-7 + commentary
+2. Efficiency — rating 1-7 + "End-to-end time (minutes)" + "Wrong actions / recovery" + commentary
+3. Writing quality — rating 1-7 + commentary
+4. Instruction following — rating 1-7 + commentary
+5. Collaboration, autonomy, and verification — rating 1-7
+     + "Steering needed (how often / how severe)"
+     + "Additional editing before I'd use it"
+     + commentary
+6. Citation quality — rating 1-7 OR N/A + commentary
+7. GUI action correctness — rating 1-7 OR N/A + commentary
+Only #6 and #7 may be N/A. The other five are always a 1-7 number.
+## How to write
+- First person, like a busy [PERSONA from field 2 — PM / Marketer / etc.] typing into the box.
+  Natural and a little plain. NOT polished AI prose. Vary sentence length, use contractions.
+- NO EM DASHES anywhere. Use regular hyphens, commas, or parentheses only.
+- Ground every claim in the LOGS. Don't invent details. If the logs don't show it, don't say it.
+- Be balanced and honest: credit real wins, name real failures, no inflation.
+- Core lens of this eval: did the model TAKE THE ACTIONS across apps, not just plan them?
+  Treat "made a plan / said it would but didn't actually do it" as a major failure.
+- Keep each commentary tight enough to fit a form box (roughly 3-7 sentences).
+- If my notes include ratings, align with them unless the logs clearly contradict — if they do, say so.
+- If difficulty (field 5) or my test rating (field 6) is blank, suggest a value with a one-line reason.
+- At the end, ask if I want shorter versions for any box.
+## Rating calibration (1-7), apply consistently
+- 7 = flawless, nothing I'd change
+- 6 = strong, one minor nit
+- 5 = solid and complete, real but non-blocking flaws
+- 4 = mixed, usable only after rework
+- 3 = notable failures, heavy rework or lots of thrashing (even if it recovered)
+- 2 = mostly failed the intent
+- 1 = failed / never actually did the work
+## What to look for, per dimension
+- Overall task success: Did the final deliverable get created and delivered (file made,
+  shared, message sent), with all requested fields/sections? Is the ANALYSIS correct, not just
+  present? (e.g. wrong root-cause = real deduction even if everything was filed.) Honest
+  flagging of data gaps is a plus, not a failure.
+- Efficiency: steady progress vs meandering. Count off-path actions and retries
+  (failed clicks, wrong directories, script bugs, dead-end approaches, heavy upfront tool
+  discovery). Note whether it recovered. Long environment/connector discovery before doing
+  the actual work is a common drag — call it out. Always fill end-to-end time from field 3.
+- Writing quality: clarity, structure, tone of the narration and the final summary / delivered
+  message. Was the delivered artifact (Teams post, report) well formatted?
+- Instruction following: go through the PROMPT's explicit constraints one by one (exact names,
+  folders, ranges, field lists, vocab, sharing settings, target chat, caps, read-only scope,
+  "no PRs", "no external research"). Distinguish "didn't follow" from "couldn't due to data/env"
+  (the latter is fine if flagged).
+- Collaboration/autonomy/verification: did it run unattended or need steering? Did it self-check
+  (dedup passes, re-reading cells, QA, verifying final state)? Did it catch its OWN mistakes, or
+  just confirm actions landed without questioning correctness? "Steering needed" = count + severity.
+  "Additional editing" = how much of the output I'd fix before using it.
+- Citation quality: for these tasks "citations" usually means grounding in real data/code
+  (API pulls vs scraped pixels, file/line evidence, source-data tabs, doc references). Accurate
+  and auditable = high. If no citations were relevant, use N/A.
+- GUI action correctness: only if it drove a UI (Chrome automation, dialogs). Judge wrong clicks,
+  failed text entry, wrong-target/wrong-account actions, dialog thrashing. Final state correct but
+  a rough path = mid score, not high. If it was all connector/API with no real UI driving, consider N/A
+  or score the connector ops and say so.
+## Persona note
+Default voice = the PERSONA in field 2 (e.g. "Project Manager at a mid-size IT services
+company" or "Digital Marketer"). Match that person's vocabulary and concerns.
+Text Written Guide for Evaluation
+Paste the shared prompt above (# REUSABLE CONTEXT) in Claude VS Code.
+Then send the next message in this format:
+Original Prompt:
+
+
+[PASTE YOUR ORIGINAL PROMPT]
+
+
+
+CodexLogs:
+
+[expand logs (screenshots attached to reference) and paste it here]
+
+
+Metadata:
+
+Here paste below 7 question's answer from Prompt Definition submission
+
+1. Occupation / career (dropdown choice):
+-> 
+2. Occupation + workplace (one line, this is the persona voice):
+-> 
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 
+6. My initial Codex test rating 1-7 (1 horrible, 7 perfect):
+-> 
+7. Notes on Codex's performance (optional):
+-> 
+
+
+Once you submit this, it will provide the Eval form answer in a human tone. After you fill out the Model A (GPT-5.5) form, run the original prompt in the Kindle Alpha model. Then send this message:
+"Provide answer for Codex Kindle-alpha model, here's this model logs [Paste this model logs]"
+Use the returned answer for that model's form. Repeat the same process for Cowork Flan if required. Finally, copy/paste the final comparison questions to get their answer, then submit the final comparison.
