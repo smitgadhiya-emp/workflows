@@ -22,3 +22,16 @@ One thing I will stress. The value here is the effective policy after all three 
 
 Note: the production HTTP request and origin data is in the "CORS Request Logs" Google Sheet, Requests tab, in the Drive folder Engineering / CORS Audit. Read that instead of live web server or CDN logs. The CORS config comes from the GitHub repo itself.
 
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer
+2. Occupation + workplace (one line, this is the persona voice):
+-> Software/security engineer at a software product company, responsible for application-security audits and infrastructure/config reviews across an Express + Next.js + Nginx web stack.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 540 minutes  
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 2
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 6

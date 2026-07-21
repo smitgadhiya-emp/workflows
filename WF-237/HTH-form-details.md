@@ -91,3 +91,129 @@ Two things pull in opposite directions. The good: external sources are properly 
 8. GUI action correctness — 4/7
 
 Heavy and mostly competent browser work: versioned doc pages across all four vendors, a non-trivial GitHub recovery flow restoring a deleted branch and reopening a closed PR, a rendered sheet QA pass, and it closed its research tab at the end. One bad read, and it's the one that cost me a turn: it opened Teams in the browser, got an organization permission error, and concluded the destination was unreachable, when the channel was reachable the whole time through the connector.
+
+
+
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+
+
+Model - C 
+
+Session Id : 019f82f4-14d4-7f11-bcb2-e8ce4093fbc7
+
+
+1. Overall task success — 3/7
+
+All 36 in-window rows resolved, boundary rows in, out-of-window rows untouched, human notes intact, Teams posted once. And it did something none of the earlier passes did: it went back and swapped the MongoDB driver citations off docs/drivers/node/current/ and onto pinned 5.9 API pages. That is the exact trap this whole brief is built around, pages that just say "current," and it's the one fix I most wanted. But it stopped twice and needed me both times, it took about twenty-six minutes which is the longest anyone has taken on this, the PR is still a draft with a timeline now showing two full close-delete-restore-reopen cycles, gaps came back at two again, and four of the eight code contradictions lost the line numbers a previous pass had already established.
+
+2. Task accuracy, ignoring speed — 4/7
+
+Several answers got genuinely sharper. Q03 now cites the actual v5.0.0 release tag as the point callback support was removed rather than gesturing at an upgrade guide. Q14 adds the Mongoose 6 migration note that shows the connection options were dropped, which is the real evidence for the db.js problem. Q08 goes further than the docs and connects them to us: our standalone mongo:5.0 container effectively writes at w:1, so don't call local writes majority-durable. And it verified the two gap verdicts by actually running the Stack Overflow searches instead of assuming they'd come back thin. What pulls it down: Q23 sits at High confidence saying MongoDB "recommends only tens of values" when the $in reference it cites makes no such recommendation, Q25 and Q27 still get answers rather than gap rows, and the contradiction column dropped from "server/src/auth.js:11" down to just "server/src/auth.js."
+
+3. Efficiency — 3/7
+
+End-to-end time (minutes): ~26 
+
+Wrong actions / recovery: Two stops, two steers from me. 
+
+The first is the one I object to, it checked for the GitHub CLI, found it missing, and halted, before establishing whether the browser session could do the job. The second I'll defend on its behalf: Stack Overflow threw a human-verification wall and it stopped and handed me the tab rather than skipping a source I'd explicitly told it to check. That's the right call. Once moving, the passes were tightly scoped, especially the sheet write plan naming exact ranges and deliberately excluding the human-note cells. Still, this is the slowest run on the workflow and its own net contribution to the corpus was 48 lines added and 37 removed.
+
+4. Writing quality — 3/7
+
+The sheet reads well and is specific. The contradiction column carries a verdict on every single row including the negatives, so I get "None; the repository has no $in query" rather than a blank, and several of those negatives are genuinely useful, like LiveFeed silently dropping HTTP errors and omitting credentials:'include'. The header is still readable from the earlier fix. The Teams post is the third one in a row that's a wall. Bullet characters sit inline with no line breaks, nothing is bold, there are no headings, and the contradiction count runs straight into "Largest version conflicts" with no separator at all, so two different sections collide mid-sentence.
+
+5. Instruction following — 3/7
+
+Held: versions read from the manifests first, research through the browser and on versioned pages, corpus under docs-corpus, a PR rather than a push to main, the window handled inclusively at both edges with all four out-of-window rows left empty, duplicates consolidated with the interpretation recorded, human notes preserved through a surgically scoped write range, gap records updated not duplicated, one Teams post, and a real cross-system audit. Broken: the PR is a draft. I asked for the file and the docs entry that contradicts it, and the corpus anchors that used to sit in that column are gone, so I now only get half of it. Four contradictions lost their line numbers. The sources column leads with relative corpus paths that don't resolve from a spreadsheet. Q36's consolidate-versus-distinct call against Q22 still isn't noted. And the first halt was on a local tool that was never on my stop list.
+
+6. Collaboration, autonomy, and verification — 4/7
+
+Steering needed: Two interventions, one avoidable and one fair.
+
+Additional editing before I'd use it: Rewrite the Teams post, take the PR out of draft, put the line numbers and corpus anchors back in the contradiction column, and settle the three questions that probably belong in gaps.
+
+The verification instincts here are good. It refused to treat the inherited PR as correct, and in checking it found the earlier attempt had only three answered rows with two of them wrong for the pin. It tested its own gap verdicts by running the searches rather than trusting the earlier conclusion. It scoped the sheet write cell-range by cell-range so the human notes couldn't be touched. It confirmed all 28 unique corpus targets cited by the sheet actually resolve on the pushed branch. That's real. What keeps it at a 4 is that all of it pointed away from the weakest row on the board, Q23 came out of that process at High confidence, and it signed off complete with a PR nobody can merge and evidence less precise than what it started with.
+
+7. Citation quality — 4/7
+
+Best and worst in the same run. The best is genuinely the best I've seen on this: pinned 5.9 driver API pages replacing "current" URLs, the v5.0.0 release tag cited as the exact point callbacks were removed, the Mongoose 6 migration anchor as evidence for the dead connection options, the Stack Overflow answer dated to 2013-08-28 and labelled 2.4-era, and reproducible search URLs for the two gaps instead of a generic tag page. That is the version-evidence discipline I asked for. The worst: four contradictions no longer carry line numbers, the docs entry each one violates is no longer linked from that column, the sources lead with paths I can't click from the sheet, and Q23 puts a recommendation in MongoDB's mouth at High confidence.
+
+8. GUI action correctness — 4/7
+
+A lot of browser work and most of it landed: versioned documentation across all four vendors, a non-trivial GitHub recovery restoring a branch that had been deleted twice and reopening the PR, a rendered sheet pass, and a Drive read to validate the internal auth policy before letting it influence the JWT verdicts. The CAPTCHA handling was correct, it stopped at a human-verification gate rather than trying to work around it. The weak point is where it started: it spent the opening of the run on a CLI check before testing the browser path it had been pointed at.
+
+
+
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+
+
+Model - D 
+
+Session Id : 019f832b-d496-7112-b3a7-8050ce82d0c4
+
+1. Overall task success — 5/7
+
+One pass, eight minutes, zero interventions. It hit a 403 from the GitHub API on PR creation and, instead of stopping like every previous attempt did on some blocker or other, it pivoted to the authenticated browser session, went to the compare page, and opened the PR itself. It's also the only run to put five questions in Knowledge Gaps rather than two, and it produced something none of the others did: a real audit.md in the repo with a row-level table for all 36 questions and a count reconciliation at the bottom. What holds it at a 5: the PR is a draft again, it put two answerable questions in the gaps tab while answering the one that's genuinely thin, and Priya's note asking for the internal auth runbook survived intact while the runbook link itself never made it into the answer.
+
+2. Task accuracy, ignoring speed — 4/7
+
+The version sourcing is the most careful of any attempt. Express cites the /4x/ paths rather than the unversioned guide, Mongoose is pinned to the 7.6.13 tag, the driver to the 5.9 API pages, jsonwebtoken to the v9.0.2 tree, and StrictMode to the React 18 upgrade guide rather than a legacy page. Q07 goes further and cites the 5.0 and 7.0 $lookup pages side by side, so the conflict is visible rather than asserted, which is what "keep both with version context" is supposed to look like. All six contradiction groups carry file and line, and it flagged the wrong mongodb category hint on Q11 and recorded the correction in the row. Where it goes wrong is the gap distribution. Q15 and Q35 both got gapped when the sources to answer them were already in hand, and the Q35 reasoning is circular: it cites the default-branch express-session and connect-mongo READMEs, then gives "default-branch READMEs are version-unverified" as the reason it can't answer, when the version tags exist and other passes used them. Meanwhile Q23, the one that genuinely is thin, got answered with "the manual recommends keeping the array to tens of values," which the cited page doesn't say.
+
+3. Efficiency — 6/7
+
+End-to-end time (minutes): ~8 
+
+Wrong actions / recovery: Essentially none, and one good recovery. 
+
+The 403 on PR creation would have been a stopping point for the other attempts; this one diagnosed it as scoped to that single operation and routed around it through the browser without asking. It also chose to build a fresh corpus on a new branch rather than untangling a PR that had been closed and had its branch deleted twice, which turned out to be the cheaper path by a lot. Tightest run on this workflow by a wide margin.
+
+4. Writing quality — 4/7
+
+The audit.md file is the best artifact produced on this job. A row per question with terminal state, route, confidence or gap target, the code check, and a linked corpus entry, then a count reconciliation showing 25 plus 6 plus 5 equals 36. It even carries a precedence rule saying the sheet only wins after that file is corrected to match. That's genuinely auditable. The sheet answers are specific and well-scoped too. Then the Teams post, which is the fourth wall in a row. Bullet characters sit inline with no line breaks, nothing is bold, no headings, and the contradiction count runs straight into "Largest version conflicts" with no separator so two sections collide mid-sentence.
+
+5. Instruction following — 4/7
+
+Versions read from the manifests first, research on versioned pages, corpus under docs-corpus, a PR rather than a push to main, the window inclusive at both edges with all four out-of-window rows left empty, duplicates consolidated with the interpretation recorded, the mislabeled hint corrected and documented, human notes untouched, gap rows prioritized with reasons, one Teams post, and the low-confidence rule actually written down in the corpus where I can read it, which I asked for and only this run delivered. Broken: the PR is a draft. Priya asked for the runbook link and it isn't there. Q36's consolidate-versus-distinct call against Q22 still isn't noted. And the corpus links written into the sheet point at a branch rather than a commit, on a repo that has already lost a corpus branch twice.
+
+6. Collaboration, autonomy, and verification — 5/7
+
+Steering needed: None. First run on this workflow that needed nothing from me at all.
+
+Additional editing before I'd use it: Take the PR out of draft, rewrite the Teams post, add the runbook link, and revisit the two rows it gapped that shouldn't be.
+
+The verification is the right kind because it's written down rather than asserted. The audit table is checkable row by row, the count reconciliation is arithmetic I can redo, and it read the sheet back and confirmed the G-001 human note survived. The recovery from the 403 also counts here, it correctly scoped the failure to one operation instead of concluding the whole system was unreachable. What keeps it off a 6: it gapped Q15 and Q35 without noticing it already had what it needed to answer them, and its own audit then records those as gaps without a second look, so the check inherited the mistake rather than catching it.
+
+7. Citation quality — 5/7
+
+Strongest of any run here. Version-pinned across all four vendors, the Express /4x/ paths instead of the evergreen guide, the Mongoose repo tag instead of a 7.x doc alias, the driver's 5.9 API pages, and the React 18 upgrade guide instead of a legacy doc. Q07 demonstrating the 5.0 versus 7.0 conflict with both URLs present is the single best example of what I asked for. Corpus links in the sheet are full resolvable URLs rather than relative paths. Two things stop it short: those URLs are branch-pinned rather than commit-pinned on a repo where the corpus branch has already been deleted twice, so they're one cleanup away from dead, and Q23 attributes a sizing recommendation to a manual that doesn't contain it.
+
+8. GUI action correctness — 5/7
+
+Clean and purposeful. Versioned documentation across all four vendors with no stalls, no misread sign-in states, and no verification walls hit. The standout is the PR recovery: API returns 403, it identifies that as scoped to PR creation only, navigates the already-authenticated session to the exact compare page, and opens the draft PR there. Correct end state through a sensible alternate route with nobody holding its hand.
+
+
+
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+
+
+Ranking: D > B > A > C
+
+
+Model D. It's the only run that finished without me touching it. Eight minutes, one pass, and when the GitHub API threw a 403 on PR creation it correctly scoped that failure to one operation and opened the PR through the browser instead of halting. It's also the only run that filed five knowledge gaps rather than two, the only one that wrote the low-confidence rule down where I can read it, and the only one that produced a real audit file with a row per question and a count reconciliation I can redo by hand. Its citations are the most precisely versioned of the batch, Express on /4x/ paths, Mongoose on the 7.6.13 tag, the driver on 5.9 API pages, and Q07 showing the 5.0 and 7.0 pages side by side so the conflict is visible rather than asserted.
+
+Model B is the most balanced of the middle three. One stop instead of two, and it made the call I'd want when it found the earlier PR sitting there claiming completion: it refused to treat that as proof and re-verified the decisive version claims before reusing any of it. Every one of its eight contradictions carries file, line, and a link to the corpus entry it violates, which is the only run that gave me both halves of what I asked for there.
+
+Model A did the foundational work nobody else had to repeat, thirteen corpus files from nothing, and it's the only run whose sheet citations were pinned to an immutable commit rather than a branch or a relative path. It drops to third on process: two avoidable halts, twenty-two minutes, and four of its eight contradictions named with no file at all.
+
+Model C made the single most valuable individual fix in the batch, moving the driver evidence off current pages onto pinned 5.9 ones, and it verified its gap verdicts by actually running the searches instead of assuming. It lands last anyway because it took the longest, needed two rescues, and handed back line numbers and corpus anchors that were already in the sheet before it started.
+
+What made them separate: every run read the pins correctly and caught the version traps, so the split came down to whether the model could get itself unstuck and whether it was honest about what it couldn't answer. D never got stuck, routed around a 403 on its own, and filed five real gaps instead of padding three of them into confident answers. B stopped once and recovered its judgment well by distrusting inherited work, while A and C each burned two of my interventions on blockers that weren't blockers, then split the difference between building the corpus (A) and quietly removing evidence from it (C).
