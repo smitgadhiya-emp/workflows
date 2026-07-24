@@ -71,3 +71,17 @@ Keep it clean and safe: no raw training records, no sample contents, no personal
 One report per snapshot. Search the "ML Data Quality" channel for a post with this exact title and the snapshot timestamp 2026-07-16 12:00 Asia/Kolkata. If there's no match, post a new one. If there's exactly one, edit it in place and swap the CSV attachment. If there's more than one, stop and report the duplicates instead of posting again. A different timestamp is a different snapshot and gets its own report.
 
 It's done when the channel holds exactly one report for this snapshot, the ledger reconciles, the CSV has every valid class, every class under 5.00% on true share shows up in the correctly sorted priority list with any provisional ones flagged, the collapsed-label groups and all exclusion counts are reported, and the report tells the ML team plainly which classes need more data before the next training run.
+
+
+MetaData : 
+
+1. Occupation / career (dropdown choice):
+-> Data Scientit
+2. Occupation + workplace (one line, this is the persona voice):
+-> ML engineer/data scientist at a software company, responsible for training-dataset quality and model performance on a single-label classification pipeline.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 180  
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 4
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 6
