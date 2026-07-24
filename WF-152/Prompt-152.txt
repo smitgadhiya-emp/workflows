@@ -28,3 +28,17 @@ What finished looks like:
 The resolved last tag and PR range, every PR in the range typed with its reasoning, the computed next version with its bump reason, the three Google Docs saved in `Engineering / Release Notes`, the three Teams posts in the right channels with the breaking-change block if one applies, and the open changelog PR against `main`. The counts have to reconcile: the number of changes in the technical version, the changelog entry, and the per-PR table all agree, and nothing in the user or exec version is missing from the technical one.
 
 It's not done until every merged PR in the range has been read and typed, the reverted and unclassified ones are called out instead of hidden, all three docs are filed, all three posts are up in the right places, and the changelog PR is actually open.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer
+2. Occupation + workplace (one line, this is the persona voice):
+-> Software developer or release lead at a product software company, responsible for shipping releases and communicating changes to developers, clients, and leadership.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 240 minutes  
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 6
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 6
