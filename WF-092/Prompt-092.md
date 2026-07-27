@@ -39,3 +39,17 @@ Last thing  drop a summary in our Microsoft Teams "Workflow test" channel. keep 
 If some of the tools are not working or you cannot get the information please let me know. Do not try to guess the answers, the critical testing order, the high-risk areas the number of Jira tasks and the links, to the sheet and the document are important.
 
 Note : GA4/Clarity/GitHub data is provided as Google Sheets in the QA / Release 4.2 Notes folder in Drive Sheets read those.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer 
+2. Occupation + workplace (one line, this is the persona voice):
+-> QA / release engineer responsible for cross-browser and cross-device test planning and release quality gating for a customer-facing storefront at a mid-sized software company.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 250 minutes
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 1
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 5
