@@ -43,3 +43,17 @@ At the end I want the full inventory, the usage analysis, the dependency analysi
 It's not done until every endpoint you found has been looked at, matched against usage, checked for dependencies across every surface, the uncertain ones parked for review with the reason named, and every report and ticket is actually in place and reconciles with the tracker.
 
 If GitHub, the Google Sheets/Drive, Jira, or Teams can't be reached, or the `mock api data` sheet is missing/empty for the window, stop and tell me exactly what's unreachable rather than guessing or half-finishing don't post a partial report or an incomplete Teams summary.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer
+2. Occupation + workplace (one line, this is the persona voice):
+-> Backend/platform engineer at a software company that runs a monorepo-based product (backend services plus web and mobile apps), responsible for API maintenance and technical-debt management.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 850 minutes  
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 0.5
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 6
