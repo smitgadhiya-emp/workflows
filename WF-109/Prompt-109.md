@@ -45,3 +45,17 @@ Give me a rough effort breakdown across schema, logic, API, tests, docs, and dep
 And recommend a release and rollback plan  deploy order for migrations, backend, feature flags, and any frontend dependency, plus the rollback steps and data precautions.
 
 If Jira, GitHub, Teams, or the output destination cannot be reached, or if the selected Jira issue is missing the title, description, acceptance criteria, or enough scope to identify the likely database/API impact, leave the Jira ticket in In Progress, post a Jira comment listing the blocker, and do not send the Teams completion message.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer
+2. Occupation + workplace (one line, this is the persona voice):
+-> Backend/platform engineer at a software company that runs a monorepo-based product (backend services plus web and mobile apps), responsible for API maintenance and technical-debt management.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 850 minutes  
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 0.5
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 6

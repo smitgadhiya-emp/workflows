@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Read(//c/Users/Empiric/AppData/Local/Temp/claude/c--Users-Empiric-Desktop-workflows/4fdd0af4-6ddb-4477-bbd4-c00ba8baef6d/scratchpad/xlsxB/**)",
+      "Bash(node dump.mjs xl/worksheets/sheet2.xml)",
+      "Bash(cp /c/Users/Empiric/AppData/Local/Temp/claude/c--Users-Empiric-Desktop-workflows/4fdd0af4-6ddb-4477-bbd4-c00ba8baef6d/scratchpad/xlsxdump/dump.mjs /c/Users/Empiric/AppData/Local/Temp/claude/c--Users-Empiric-Desktop-workflows/4fdd0af4-6ddb-4477-bbd4-c00ba8baef6d/scratchpad/xlsxB/dump.mjs)",
+      "Read(//c/Users/Empiric/AppData/Local/Temp/claude/c--Users-Empiric-Desktop-workflows/4fdd0af4-6ddb-4477-bbd4-c00ba8baef6d/scratchpad/xlsxD/**)",
+      "Bash(node dump.mjs xl/worksheets/sheet4.xml)"
     ]
   }
 }
