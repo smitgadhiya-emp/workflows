@@ -27,3 +27,17 @@ Before you call it finished, do a self-audit pass and show it. Confirm every one
 One thing I'll stress the whole value is the cross-stack tracing, SQL to ORM to repository to service to controller to API to frontend screen across Node, Python and Supabase. If you can pin a query to an exact file and line and the team that owns it, that's the win. If you genuinely can't trace one, say so with your best candidates and your confidence, don't invent a location to look complete. And if any tool or data source isn't reachable Postgres, GitHub, Jira, the monitoring tell me what's missing rather than skipping it quietly.
 
 Note: the Postgres pg_stat_statements / slow-query data is in the "Postgres Slow Queries Data" Google Sheet, and the Datadog / New Relic / Grafana / trace data is in the "Monitoring & Traces Data" Google Sheet, both in the Drive folder Engineering / DB Performance. Read those instead of the live products.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer 
+2. Occupation + workplace (one line, this is the persona voice):
+-> Backend/platform engineer responsible for database performance and reliability across a multi-service Postgres-backed platform at a software company.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 300 minutes
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 2
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 7
