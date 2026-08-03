@@ -1,0 +1,28 @@
+I look after our API platform and there's a pull request up that changes our Orders API, I need you to  work out whether it breaks any of our services before it goes anywhere near merge. This is the review we  do on every contract change and the bit that bites us is a change that looks harmless but takes down a  caller we forgot about.
+
+Everything's in my GitHub repo "orders-platform". The published contract is  provider/openapi/orders-api.yaml on main. The proposed change is the open PR "Evolve Orders API", on the  branch evolve-orders-api, which edits that same spec. Our services that call this API live under  consumers/ (billing-service, checkout-web, analytics batch, ops-dashboard, fraud-check, data-warehouse,  mobile-app), and there's one more integration under integrations/partner-webhook that also calls it, so  don't stop at the consumers folder. Each service's code shows which endpoints it hits and which fields it  actually reads or sends, and some read the response differently from others, so read the code rather than  assuming.
+
+First, diff the proposed spec against the published one and go through every change. For each one decide  if it's breaking or safe for existing callers, going by how APIs actually evolve, not just whether the text changed. The things that trip people up: adding a new required field to a request body breaks callers that don't send it, but a new optional field is fine. Removing or renaming a field breaks whoever reads it. Taking a value out of an accepted enum breaks a caller that still sends that value, and adding a new  value is fine for callers that send it, but watch which way the enum flows: a value the API can now return, on a status a caller reads back and branches on, can break a caller that only handles the old set, so a widening isn't automatically safe. And a change to a v2 path doesn't affect a service that's still calling v1. Watch for a field that's marked deprecated but is still being read by someone, pulling it is  still a breaking change for them. And check what we even allow to change in place, there's a versioning  note in the provider docs about what can move on a stable version versus what has to go out as a new version or an additive step, so factor the policy in, a change can look fine on impact and still be the wrong way to ship it.
+
+Then, for every change you call breaking, work out who actually breaks. Search the service code for real  usage of the changed operation and the changed field or parameter, not just any mention of orders. A  service that reads a different field off the same endpoint isn't affected, this is about the specific  thing that changed. Some services read the whole response generically rather than by named field, so whether a rename actually reaches them may not be answerable from the code in front of you, where you honestly can't tell, say so and route it to the owner to confirm rather than calling it clear or calling it broken. Some changes will break more than one service, some will break nobody. A breaking change that no service actually uses is worth noting but it's not an emergency, so rank by real impact.
+
+I want a compatibility verdict on the PR: overall is it safe to merge as-is, and if it isn't, whether the  right fix is the callers changing their code or this PR being re-cut as a versioned or additive change instead. Then a per-change list saying breaking or safe with the reason, and for the breaking ones which services are hit and what each of them would need to do, remembering the fix isn't one-size: an internal service can move on our own schedule but a third-party or external integration usually needs the old shape kept behind a deprecation window, so say what each specific caller needs, not a blanket "everyone rename it". Post that as a review on the PR itself (a review comment is fine, don't approve and don't merge). Then open a GitHub issue in this same repo for each service that actually breaks, one issue per service, titled so the owning team can find it, describing what changed and what they need to fix, and tag it so it's clearly a coordination issue off this PR. Don't open issues for services that aren't affected.
+
+Log the review in my Notion database API-CHANGES, one entry for this PR, with the overall verdict, the  count of breaking vs safe changes, and the list of impacted services. Then post a short digest to my  Microsoft Teams channel platform, for real: lead with the go/no-go call, then the breaking changes and who they hit, then a line on what you checked and cleared as safe. Keep it skimmable and have the numbers line up with the PR review and the issues.
+
+The PR review, the issues, the Notion entry and the Teams post are all live. Don't approve or merge the  PR and don't touch the consumer code, this is a review that stops at flagged-and-routed. If you can't read the repo or the diff tool won't run, say so in the Teams post and stop rather than guessing at the diff. You're done when the PR has a review with a per-change verdict, there's an issue for each service that really breaks, the Notion entry's in, and the digest is up with matching numbers.
+
+
+Metadata:
+
+1. Occupation / career (dropdown choice):
+-> Software Developer 
+2. Occupation + workplace (one line, this is the persona voice):
+-> Platform / backend engineer, reviewing API contract changes for breaking impact across the services that call them.
+3. Time to complete this workflow WITHOUT a model (minutes):
+-> 90 minutes
+4. Times PER MONTH I run this workflow (decimal ok, 0.5 = every 2 months):
+-> 12
+5. Workflow difficulty 1-7 (1 easy, 7 hard):
+-> 7
+
