@@ -10,7 +10,18 @@
       "WebFetch(domain:endoflife.date)",
       "Bash(cd \"/c/Users/Empiric/Downloads\" && ls -1t | head -60)",
       "Read(//c/Users/Empiric/Downloads/**)",
+<<<<<<< Updated upstream
       "Bash(git checkout *)"
+=======
+      "Bash(ls -la \"/c/Users/Empiric/Downloads/Smit\" 2>/dev/null | head -30; echo \"--- xlsx in Downloads ---\"; ls \"/c/Users/Empiric/Downloads\" 2>/dev/null | grep -i -E \"api workflow|Technical Debt\" | head -20)",
+      "Bash(python -c \"import openpyxl; print\\('ok'\\)\")",
+      "PowerShell($s='C:\\\\Users\\\\Empiric\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Empiric-Desktop-Workflows\\\\50e542d6-7e1d-4344-87c8-da87575cf4a2\\\\scratchpad\\\\dump-xlsx.ps1'; & $s -Path 'C:\\\\Users\\\\Empiric\\\\Downloads\\\\api workflow test \\(1\\).xlsx' -MaxRows 25)",
+      "PowerShell($s='C:\\\\Users\\\\Empiric\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Empiric-Desktop-Workflows\\\\50e542d6-7e1d-4344-87c8-da87575cf4a2\\\\scratchpad\\\\dump-xlsx.ps1'; foreach\\($f in @\\('api workflow test.xlsx','api workflow test \\(2\\).xlsx'\\)\\){ Write-Output \"@@@@@@ $f\"; & $s -Path \"C:\\\\Users\\\\Empiric\\\\Downloads\\\\$f\" -MaxRows 22 })",
+      "PowerShell($s='C:\\\\Users\\\\Empiric\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Empiric-Desktop-Workflows\\\\50e542d6-7e1d-4344-87c8-da87575cf4a2\\\\scratchpad\\\\dump-xlsx.ps1'; foreach\\($f in @\\('api workflow test \\(3\\).xlsx','api workflow test \\(4\\).xlsx','api workflow test \\(5\\).xlsx'\\)\\){ Write-Output \"@@@@@@ $f\"; & $s -Path \"C:\\\\Users\\\\Empiric\\\\Downloads\\\\$f\" -MaxRows 20 })",
+      "PowerShell($s='C:\\\\Users\\\\Empiric\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Empiric-Desktop-Workflows\\\\50e542d6-7e1d-4344-87c8-da87575cf4a2\\\\scratchpad\\\\dump-xlsx.ps1'; foreach\\($f in @\\('API Technical Debt Report 05-06_2026.xlsx','API Technical Debt Report 05-06_2026 \\(1\\).xlsx','API Technical Debt Report 05-06_2026 \\(2\\).xlsx','API Technical Debt Report 05-06_2026 \\(3\\).xlsx','API Technical Debt Report 05-06_2026 \\(4\\).xlsx','API Technical Debt Report 05-06_2026 \\(5\\).xlsx'\\)\\){ Write-Output \"@@@@@@ $f\"; & $s -Path \"C:\\\\Users\\\\Empiric\\\\Downloads\\\\$f\" -SheetNamesOnly })",
+      "PowerShell($s='C:\\\\Users\\\\Empiric\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Empiric-Desktop-Workflows\\\\50e542d6-7e1d-4344-87c8-da87575cf4a2\\\\scratchpad\\\\dump-xlsx.ps1'; & $s -Path 'C:\\\\Users\\\\Empiric\\\\Downloads\\\\API Technical Debt Report 05-06_2026.xlsx' -MaxRows 60 -MaxSheets 1)",
+      "PowerShell($s='C:\\\\Users\\\\Empiric\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Empiric-Desktop-Workflows\\\\50e542d6-7e1d-4344-87c8-da87575cf4a2\\\\scratchpad\\\\dump-xlsx.ps1'; foreach\\($f in @\\('API Technical Debt Report 05-06_2026 \\(1\\).xlsx','API Technical Debt Report 05-06_2026 \\(3\\).xlsx'\\)\\){ Write-Output \"@@@@@@ $f\"; & $s -Path \"C:\\\\Users\\\\Empiric\\\\Downloads\\\\$f\" -MaxRows 45 -MaxSheets 1 })"
+>>>>>>> Stashed changes
     ]
   }
 }
