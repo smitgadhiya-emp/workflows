@@ -7,7 +7,9 @@
       "Bash(cp /c/Users/Empiric/AppData/Local/Temp/claude/c--Users-Empiric-Desktop-workflows/4fdd0af4-6ddb-4477-bbd4-c00ba8baef6d/scratchpad/xlsxdump/dump.mjs /c/Users/Empiric/AppData/Local/Temp/claude/c--Users-Empiric-Desktop-workflows/4fdd0af4-6ddb-4477-bbd4-c00ba8baef6d/scratchpad/xlsxB/dump.mjs)",
       "Read(//c/Users/Empiric/AppData/Local/Temp/claude/c--Users-Empiric-Desktop-workflows/4fdd0af4-6ddb-4477-bbd4-c00ba8baef6d/scratchpad/xlsxD/**)",
       "Bash(node dump.mjs xl/worksheets/sheet4.xml)",
-      "WebFetch(domain:endoflife.date)"
+      "WebFetch(domain:endoflife.date)",
+      "Bash(cd \"/c/Users/Empiric/Downloads\" && ls -1t | head -60)",
+      "Read(//c/Users/Empiric/Downloads/**)"
     ]
   }
 }

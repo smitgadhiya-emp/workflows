@@ -17,3 +17,35 @@ From "  "   having details,
 
 Model : 
 Logs : 
+
+
+
+Prompt 4 : 
+
+@Prompt Book/ Use this as COntex but generate 
+@Prompt Book/head-to-head  for what i need as prompt.
+@/c:/Users/Empiric/Desktop/workflows/Answer generator Prompt v3.1.md 
+@/c:/Users/Empiric/Desktop/workflows/Harsh rating prompt.md 
+
+also need to give a harsh rating and try to cut score by finding the each and every mistake and need to justify why are we give this score, i mean you need to justify the reason behind this low or high score 
+
+also in the observation i can just check and provide formating and styling related justification , you need to check every thing in details properly like data and report and output produce by the WF 
+
+we have 6 model evalution in that i can run same prompt with 6 diff model 
+i've provide the WF prompt and dummy seed data prompt so you can identify which data we have seed and how the o/p is produce so that can help you to assign a score 
+
+also i have some comment which are previously give by the client  
+so need to focus on that and do not generate the responce like this  such as a 
+- "I cannot open the database to decide who is correct, but the burden sits with the outlier, and that is what pulls this to a five." The reviewer was not understanding why the expert would not be able to open the database.
+- Had a task that mentioned "you" a few times throughout in commentary that seemed like an AI model responding in chat.
+- Had AI-like symbols in written commentary like → we wouldn't expect in natural writing.
+- "That's a reasonably diverse, named set, not a handful of vague mentions. I'm rating this off the source list and your read of the doc rather than checking every claim against its source myself, so if there's a headline number in there that doesn't trace cleanly, that's worth a specific line before you submit."
+- Hi there, could you clarify what is meant by "Which you flagged" here and adjust it? Thank you!
+
+the responce must be a humanize and it look like a human writen, also during the responce generate you can not write as i am ai, i can not access the db, which you flage something ... 
+
+also when you give a responce in the evalution you can not mention the like Model A is do thid model B can't Model C is better then model D and all 
+
+those find of thing we can do in final comparison, during the indevidual evalution we can not write model comparion
+
+

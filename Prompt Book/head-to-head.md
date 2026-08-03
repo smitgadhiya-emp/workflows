@@ -175,15 +175,17 @@ GUI action correctness commentary
 - If will keep proving you model and its detal help me for final ranking also. i will share everything with codex model also.
 - Models:
 
-Model A: gpt-5.6-cyan with Extra High intelligence
-Model B: gpt-5.6-rose with High intelligence
-Model C: gpt-5.6-cyan with High intelligence
-Model D: gpt-5.6-rose with Extra High intelligence
+Model A: gpt-5.6-cat with High intelligence
+Model B: gpt-5.6-cat with Extra High intelligence
+Model C: gpt-5.6-fish with High intelligence
+Model D: gpt-5.6-fish with Extra High intelligence
+Model E: gpt-5.6-dog with High intelligence
+Model F: gpt-5.6-dog with Extra High intelligence
 
 - Final randing includes: 
 Final comparison - 
 Rank all responses from best to worst.*
-Use model labels, e.g. A > B > C > D.
+Use model labels, e.g. A > B > C > D > E > F.
 Which model is best overall?  *
 Why is the top model best, and what separates the other models? *
 ## Note:
