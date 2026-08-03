@@ -9,7 +9,8 @@
       "Bash(node dump.mjs xl/worksheets/sheet4.xml)",
       "WebFetch(domain:endoflife.date)",
       "Bash(cd \"/c/Users/Empiric/Downloads\" && ls -1t | head -60)",
-      "Read(//c/Users/Empiric/Downloads/**)"
+      "Read(//c/Users/Empiric/Downloads/**)",
+      "Bash(git checkout *)"
     ]
   }
 }
