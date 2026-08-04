@@ -324,3 +324,27 @@ C is fifth. Its PR review is the best-structured written artifact of the six, wi
 B is last. Its verification was the most complete of any run and it needed nothing from me across nearly seven minutes, which is real. Everything else works against it: the slowest route to the same result, two wasted steps at the end tidying up its own scratch clone after the deliverables were already live, and a digest that went into the channel as a dense block with an arrow character in the middle of it, against an explicit instruction to keep it skimmable.
 
 If I had to break F and D apart in one line: both produced a correct, well-reasoned review, and only one of them produced a digest I could post without rewriting it.
+
+
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+
+
+B, D and F only
+
+Ranking: F > D > B
+
+Which model is best overall: F
+
+Why the top model is best, and what separates the other models:
+
+All three landed every artifact unattended with consistent numbers, and all three got the same six real breaking changes with the same six owning services. The policy call is right in all three, NO-GO because the stable v1 contract is frozen rather than because of blast radius, with caller tickets framed as coordination and not permission to merge. The partner integration outside the consumers folder was found in all three and given a deprecation window, data-warehouse was escalated to its owner rather than cleared or condemned, and mobile-app was correctly left alone. They also all made the same two mistakes: labelling the v2 coupon_code removal breaking when every caller is on v1, which puts a wrong 7 breaking and 1 safe count on the PR, in Notion and in the channel, and manufacturing owner-confirmation work for checkout-web and ops-dashboard that no code in the repo supports.
+
+F is best because its review is the one another engineer could act on without coming back to me. Every caller claim points at the actual file, from the ops-dashboard widget that sends the removed status value to the fraud-check module that raises on an unhandled one, and it quotes the versioning policy rather than paraphrasing it. Its data-warehouse uncertainty is described mechanically, naming whether the rename creates an unmapped column or strands the old one, which is a question the Data team can answer instead of a shrug. It caught that fraud-check's on_hold branch merely goes unreachable rather than failing, its digest is skimmable with a line per breaking change, and it recovered from a failed code search on its own in just over four minutes.
+
+D is second. It is the only one of the three that gave me the ranked-by-impact view I asked for, tiering the external partner and order creation as critical and the debug route as low, and it caught the same on_hold nuance F did. Its closing readback covered the review type, the PR state, the six issues and the Notion and channel counts. What separates it from F is the digest, which went into the channel with its headline duplicated on the first line and then one continuous paragraph with no bullets and nothing emphasised. That is the artifact the team reads, and I would have rewritten it before anyone saw it. Its evidence is also thinner, naming services and fields rather than the files behind them.
+
+B is last. Its verification is the most complete of any run here, and I want to be fair about that: it proved there is exactly one PR on the branch rather than asserting it, read the exact posted message back, and confirmed all six issues open with all three labels. It is also one of only two runs that wrote the six issue numbers into the review body, so the PR and the tickets cross-reference properly. Everything else counts against it. Nearly seven minutes is the slowest route to the same answer, it spent two steps at the end tidying up its own scratch clone after the deliverables were already live, and the digest went out as a dense block with an arrow character in the middle of a sentence, against an explicit instruction to keep it skimmable.
+
+Tie-break between F and D: D wins on the one thing I asked for that F did not deliver, the impact ranking, and it is not a small thing on a review whose whole point is knowing what to fix first. But F carries that ordering implicitly in its digest and beats D on evidence and on the artifact the channel actually reads, so it takes it.

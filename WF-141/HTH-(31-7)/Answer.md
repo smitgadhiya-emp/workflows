@@ -322,3 +322,27 @@ A is fifth. The analysis is as sound as everyone else's, but it needed four roun
 E is last, and it is the sharpest analysis of the six. It carried the true shares to four decimals, answered the provisional question explicitly, reconciled every line, and scoped the sheet read to just the three columns it needed. Then it staged the post and asked permission instead of publishing, so the channel is empty for this snapshot and the ML team got nothing. The staged message does not even carry the title I specified. Precision on the numbers counts for very little when the report never reaches anyone.
 
 If I had to break D and F apart on a single line, it is this: both produced a correct report with a verified attachment, and only one of them did it without me in the loop.
+
+
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+
+
+B, D and F only
+
+Ranking: D > F > B
+
+Which model is best overall: D
+
+Why the top model is best, and what separates the other models:
+
+All three ran the analysis unattended and all three got the numbers right, so none of the separation comes from the maths. 1,021 valid samples across 12 classes, the ledger tying on every line, and scarf held at 4.9951 percent instead of taking the rounded 5.00 percent at face value. All three also share the same reporting gap: the variants section gives t-shirt 190 plus 5 rows against a class the CSV shows at 175 samples, and none of them explains the 20 duplicate rows that account for it.
+
+D is best because it is the only one of the three that published without needing anything from me and can prove the file on the post is the right file. When Teams offered it a same-named CSV already sitting in the channel, it opened that file and compared all 91 cells against its own computation before reusing it. That is the check that separates a report which says the right thing from a report whose attachment I would trust. Nine and a half minutes, no steering, no mess left behind. Its weaknesses are real but small: it announced a final channel-state check after publishing and then closed out without reporting what it found, and its post is the plainest of the three with the headline numbers unmarked.
+
+F is second and close. Same correctness, and it checked the reused channel file's twelve-row distribution before letting it out, so its attachment is trustworthy too. It was the fastest of the three at about five and a half minutes and its digest is the more readable one. What drops it below D is that it got all the way to a staged post with the file attached and then asked whether it should publish, on a request that already told it to post for real, so the delivery took a second instruction from me. Its report also crams the valid sample count, the class count, the below-five-percent figure and the single-label result into one running paragraph, which is the block anyone opening the post reads first.
+
+B is last, and it is the frustrating one. It is the only one of the three that attached the CSV it actually built rather than reusing a file from the channel, and its closing readback is the most thorough of any run I looked at: PR state, issue labels, Notion placement and the exact posted message all re-read from the server. It needed nothing from me across nineteen minutes. But nineteen minutes is the problem, and so is the route. It went after the in-place edit the request calls for, tripped a rename collision, went into the channel's shared folder and overwrote a document to force the filename, hit a failed edit, and ended up blanking the original message so it no longer carried the title. Correct report, and a channel I have to go clean up.
+
+Tie-break between D and F: F is faster and its formatting is better, so on a quiet week I would take it. On a workflow I run four times a month, the one that finishes without me wins, and that is D.

@@ -324,3 +324,27 @@ E is fifth. It was faster than A and B, it confirmed the no-op condition, and it
 C is last. Its analysis is as good as anyone's and it was the fastest useful run at four and a half minutes, and it deserves credit for verifying the codified values against live. But two of its three security incidents are showing closed, there is no post-publish read of the issues anywhere in the run to have caught it, and its SNS verdict leads with no change on the one row that exists precisely because a no-change reading is wrong. The reasoning was right and the half of the deliverable that gets a human onto a compromised access key did not survive.
 
 If I had to break F and D apart in one line: both produced correct verdicts and clean staged edits, and only one of them asked whether its own reverts would actually do what the table said.
+
+
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+
+
+B, D and F only
+
+Ranking: F > D > B
+
+Which model is best overall: F
+
+Why the top model is best, and what separates the other models:
+
+All three got every verdict right and all three left their three incidents open, so on the core drift court there is nothing to choose between them. Each split the web security group into two opposite verbs rather than stopping at the first difference, codified the Config guardrail on 443 while staging the world-open SSH rule as a revert, kept the break-glass bastion rule without treating a powerful role and a late hour as automatically unauthorized, put the autoscaler-owned capacity behind ignore_changes, refused to fold the unauthorized bucket changes into code, raised the RDS class and the volume size to match live rather than proposing a shrink of anything holding data, left the clean log group untouched, and held the live-only SNS topic outside codify, ignore and revert. All three also filed three incidents where the paired PutBucketAcl and PutBucketTagging events are one change by one actor at one timestamp, deferred the SNS import instead of staging it, and opened drafts rather than PRs ready for review.
+
+F is best because it is the only one of the three that questioned its own work rather than just its inputs. It installed Terraform so its validation claim meant something instead of resting on a formatting check, then surfaced the incomplete ASG fixture honestly rather than inventing a launch template to make validate pass. More importantly, its tagging incident raises a point neither of the others touched: omitting a tag from the desired configuration does not necessarily remove it, so the staged revert may need a controlled removal operation and the plan has to be checked first. That is the difference between a revert written down and a revert that lands. Its attribution is also the most complete of the three, naming the sources behind the legitimate changes as well as the unauthorized ones, and its bucket handling is the most precise, treating one physical ACL mutation seen through two Terraform addresses as a single incident with the derived ID change explained rather than logged as separate drift.
+
+D is second and close. Same verdicts, the tightest change surface of any run at twenty-three lines added and twelve removed, and it verified after editing that the codified values match live and that no managed resource is added, removed, renamed, replaced or downsized, which turns the destructive rule into a test instead of a promise. Its incident issues are the most operationally careful of the three, saying remove only the unauthorized rule and preserve the approved one, and remove the owner tag only after re-reading current tags so an authorized tag does not get wiped. What separates it from F is that nothing in the run reads the PR or the three issues back after creating them, so their state rests on the create calls, and it never asked whether its own staged reverts would behave as described.
+
+B is last. Its closing audit is the best in this whole sweep and I will give it full credit: it listed open PRs filtered to the reconcile-drift head, which actually demonstrates the one-PR rule rather than asserting it, read the remote diff by name to prove only main.tf changed, and read all three issues back to confirm they were open. It also surfaced the ASG fixture gap honestly instead of papering over it. But eight and a half minutes is the longest route to the same nine verdicts, two separate validation attempts both landed on a limitation it had already decided not to fix, and for all that checking it never compared the edited code against live, so the clean-no-op condition I set is the one thing it left untested. Its diff is also the widest of the three at thirty-nine lines added and twenty-eight removed for five decisions, which on a gate where touching a clean resource is itself a failure is more surface than I want to review.
+
+Tie-break between F and D: both are runs I would accept. D edges F on discipline, the smallest diff and the explicit destructive check, and F edges D on scepticism, real validation and catching a flaw in its own revert plan. On a weekly gate against a prod account, I will take the one that doubts itself.
