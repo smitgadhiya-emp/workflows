@@ -322,3 +322,32 @@ A is last. It is the only run that needed me to intervene, twice, and the only o
 One thing worth recording about this comparison. The Reviews ticket was not on the board when Model A started, which is why its first pass selected a lower-priority decoy and stopped on the blocker rule. That part of A's run was correct behaviour and I have not scored it down for the selection itself, only for what it delivered on the second pass. The other five all ran against a board that already had the right ticket on it.
 
 Two patterns showed up across the whole set. Every run wrote its sequence section as a chain of arrows rather than as a diagram except the two that embedded a real figure, even though I asked for a sequence diagram wherever the feature changes API flow. And four of the six ran the required Teams header straight into the body of the message, which defeats the point of specifying a header at all.
+
+
+
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+=====================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=====================================================================================================
+
+
+
+
+
+B, D and F only
+
+Ranking: F > B > D
+
+Which model is best overall: F
+
+Why the top one is best, and what separates the other two:
+
+F is the only one of these three that produced a blueprint built for someone to read. Eleven tables carry the file impact, the schema, the endpoint list and the risk register, with every file given its path, its change type and a reason on one line, and the pre-coding contract decisions table at the top is a genuinely useful thing to open a handover document with. No em dashes anywhere. A real embedded sequence figure rather than a column of arrow lines, and it did not just generate that figure, it rendered it, looked at it, found the two repository self-call labels clipped and rebuilt it. It read the imported document back, caught that dash characters had been converted to literal question marks, and paused the Jira and Teams posts to repair them before publishing anything, which is the right order to do that in. It is also the only one of the three that pulled the design reference off the ticket, and the only one anywhere in this run that identified the decimal wire type problem, that Eloquent decimal casts commonly return strings so the rating average format has to be agreed with mobile before coding rather than discovered during integration. Its Teams post opens with the header on its own line and breaks into sections. What holds it short of a higher score is that it declared the import verified while a paragraph in the dependency graph section is still mangled, with several chains run together into strings that are not words, and it took three rework loops to get there, one of them from trying to build the whole document in a single command and hitting the command length limit.
+
+B is second. It has the fullest section list of the three at eighteen numbered sections, its schema and endpoint work matches the repository, and it makes a distinction most passes would miss, that helpful votes must not invalidate the product cache because they do not change the rating aggregates. Its sequencing discipline is the best of the three: it validated the exact Teams destination before it posted the Jira comment and before it transitioned the ticket, specifically so a routing failure could not leave the issue showing In Review with nothing sent. That is thinking about how the run could fail rather than just working through the steps. Two things put it behind. It reported that the ticket has no attachments or remote links and moved on, when there is a design reference on it that I asked for by name, so the entire blueprint was written from an incomplete gather. And the artifact itself is thirty-five em dashes and two hundred and ninety-nine bullets across four hundred paragraphs with not one table, its sequence section is a stack of arrow lines rather than a diagram, and its Teams post prints the required header twice, once on its own line and again at the start of the body.
+
+D is third. On coverage it is the most thorough of the three and in places the most careful: it is the only one that connects the existing order service test to the new purchase eligibility path, its per migration detail on range enforcement, portable uniqueness and down behaviour is the best here, and it correctly identifies that the existing exception handler returns the raw message and status, which turns a review uniqueness violation into a potential SQL leak. It ran fastest of the three at ten minutes with no input from me. It lands last because everything it found is packaged in the least usable form of the set. Four hundred and thirty-one paragraphs, two hundred and twenty-nine bullets, zero tables and seventy-one em dashes, so the file inventory, the endpoint contracts and the risk register all arrive in exactly the same flat texture with nothing to navigate by, and the Teams post runs the required header into the body and continues as an unbroken block. It also missed the design reference, and its inventory of fifty-one files with thirty-five of them new is the largest by a wide margin and is published as a headline number in both the Jira comment and the Teams post with nothing marking what is verified impact and what is proposed scaffolding, so the twelve to sixteen day estimate rests on a figure that cannot be checked.
+
+Two things all three share, which is worth recording separately from the ranking. None of them qualified its file count, so three different numbers, thirty-three, fifty-one and forty-five, were each handed over as if measured. And every one of them treats the repository named in my request as authoritative over the different one in the ticket description and documents that decision, which is the right call and the right way to record it.
