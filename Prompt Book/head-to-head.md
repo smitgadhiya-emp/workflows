@@ -183,7 +183,7 @@ Model C: gpt-5.6-dog with Extra High intelligence
 - Final randing includes: 
 Final comparison - 
 Rank all responses from best to worst.*
-Use model labels, e.g. A > B > C > D > E > F.
+Use model labels, e.g. A > B > C
 Which model is best overall?  *
 Why is the top model best, and what separates the other models? *
 ## Note:
